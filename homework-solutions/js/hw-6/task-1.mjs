@@ -10,11 +10,7 @@
 const forOf = [];
 const elements = [1,2,3,4,5,6,7,8,9,10];
 for (const element of elements) {
-  if (element % 2 === 0) {
-    forOf.push(element**2);
-  } else {
-    forOf.push(element**3);
-  }
+    forOf.push(element % 2 === 0 ? element**2 : element**3);
 }
 console.log(forOf);
 
