@@ -15,12 +15,44 @@
 const numbers = [7, 8, 2, 30, 85, 95, 77, 94, 37, 31];
 
 let forEach;
+forEach = [];
+for (const num of numbers) {
+   if (num % 3 === 0) forEach.push(num); 
+}
+console.log(forEach); 
+
 let map;
+const lenght = numbers.length;
+map = numbers.map(x => x - lenght);
+console.log(lenght); 
+console.log(map);
+
 let filter;
+filter = numbers.filter((number,i) => i > 0 && number > numbers[i-1]);
+console.log(filter);
+
 let find;
+find = numbers.find((num, index) => num === (index = 2));
+console.log(find); 
+
 let sort;
+sort = [...numbers].sort((a,b) => a - b);
+ 
+console.log(sort); 
+console.log(numbers); 
+
 let reduce;
+reduce = numbers.reduce((x, num) => x + num);
+
+console.log(reduce); 
+
 let some;
+some = numbers.some(num => num > 90);
+console.log(some); 
+
 let every;
+every = numbers.every(num => String(num).length === 2);
+
+console.log(every);
 
 export { forEach, map, filter, find, sort, reduce, some, every };
