@@ -16,9 +16,11 @@ const characters = [
 function addCharacter(character) {
   if (!character || typeof character !== 'object') {
     throw new Error('Invalid input: must be an object');
-  } if (typeof character.name !== 'string') {
+  } 
+ if (typeof character.name !== 'string') {
     throw new Error('Invalid name');
-  } if (typeof character.age !== 'number') {
+  } 
+ if (typeof character.age !== 'number') {
     throw new Error('Invalid age');
   }
   characters.push(character);
@@ -30,7 +32,7 @@ console.log(characters);
 
 
 function getCharacter(name) {
-  return characters.find(character => character.name === name);
+  return characters.find(character => character.name === name) || "Нет такого имени";
 }
 console.log(getCharacter('Jack'));
 
@@ -38,7 +40,8 @@ console.log(getCharacter('Jack'));
 function getCharactersByAge(minAge) {
   if (typeof minAge !== 'number') {
     throw new Error('Invalid age');
-  } else return characters.filter(character => character.age >= minAge);
+  }
+ return characters.filter(character => character.age >= minAge);
 }
 console.log(getCharactersByAge(36));
 
@@ -52,10 +55,11 @@ updateCharacter('Jack', { name: 'Jackson', age: 50 });
 console.log(characters);
 
 function removeCharacter(name) {
-  const index = characters.findIndex(character => character.name === name);
-  if (index !== -1) {
-    characters.splice(index, 1);
-  } else throw new Error('not found');
+ const index = characters.findIndex(character => character.name === name);
+  if (index === -1) {
+    throw new Error('not found');
+  } 
+  characters.splice(index, 1);
 }
 
 removeCharacter('Barney');
