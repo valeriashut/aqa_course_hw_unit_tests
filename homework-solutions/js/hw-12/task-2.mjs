@@ -30,7 +30,7 @@ async function createTodo(bodyToDo) {
         }
         const responseData = await response.json();
         if (responseData.id !== 201) {
-            throw new Error(`Expected something else`);
+            console.error(`Expected something else`);
         }
         return responseData;
     } catch (error) {
