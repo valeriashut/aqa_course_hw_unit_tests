@@ -35,7 +35,6 @@ async function createTodo(bodyToDo) {
         return responseData;
     } catch (error) {
         console.error('Error creating todo:', error.message);
-        throw error;
     } finally {
         console.log('Работа функции завершена');
     }
