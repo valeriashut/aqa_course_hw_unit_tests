@@ -11,13 +11,7 @@ function validatePassword (password: string): boolean {
     if (password.trim().length === 0) {
     return false;
   }
-  if (password.length < 8 ||
-    !/[A-Z]||[А-Я]/.test(password) || 
-    !/[a-z]||[а-я]/.test(password) || 
-    !/\d/.test(password)) {
-    return false;
-    }
-    return true;
+  return  password.length >= 8 && (/[A-Z]||[А-Я]/.test(password)) && (/[a-z]||[а-я]/.test(password)) && /\d/.test(password);
 }
 
 
